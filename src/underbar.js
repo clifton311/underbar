@@ -296,7 +296,6 @@
       };
   };
   
-
   // Delays a function for the given number of milliseconds, and then calls
   // it with the arguments supplied.
   //
@@ -324,7 +323,16 @@
   // input array. For a tip on how to make a copy of an array, see:
   // http://mdn.io/Array.prototype.slice
   _.shuffle = function(array) {
-  };
+    var clone = array.slice(0);
+        
+    for (var i = 0; i < clone.length; i++) {
+        var pos = Math.floor(Math.random() * clone.length);
+        var temp = clone[i];
+        clone[i] = clone[pos];
+        clone[pos] = temp;
+    }
+    return clone;
+};
 
 
   /**
@@ -338,6 +346,7 @@
   // Calls the method named by functionOrKey on each value in the list.
   // Note: You will need to learn a bit about .apply to complete this.
   _.invoke = function(collection, functionOrKey, args) {
+
   };
 
   // Sort the object's values by a criterion produced by an iterator.
