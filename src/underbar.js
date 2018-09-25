@@ -326,10 +326,10 @@
     var clone = array.slice(0);
         
     for (var i = 0; i < clone.length; i++) {
-        var pos = Math.floor(Math.random() * clone.length);
+        var shuff = Math.floor(Math.random() * clone.length);
         var temp = clone[i];
-        clone[i] = clone[pos];
-        clone[pos] = temp;
+        clone[i] = clone[shuff];
+        clone[shuff] = temp;
     }
     return clone;
 };
@@ -387,5 +387,7 @@
   //
   // Note: This is difficult! It may take a while to implement.
   _.throttle = function(func, wait) {
+
+  //waiting
   };
 }());
